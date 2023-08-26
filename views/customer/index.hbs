@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <title>Home Page</title>
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .container {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      background-color: #ffffff;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+    .table-success {
+      background-color: #c3e6cb;
+    }
+    .btn-center:hover {
+      background-color: rgba(228, 220, 220, 0.41);
+    }
+    .table {
+      background-color: #fff; 
+    }
+    th {
+      background-color: #343a40; 
+      color: #fff; 
+    }
+    .table-success tbody td {
+      background-color: #d4edda; 
+    }
+    .product-table {
+      width: 100%;
+      margin-top: 20px;
+      table-layout: fixed; 
+    }
+    .product-table th,
+    .product-table td {
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap; 
+      overflow: hidden; 
+      text-overflow: ellipsis; 
+    }
+  </style>
+</head>
+<body>
+ <div class="container mt-3 mb-3">
+  <a href="/animal" class="btn btn-danger mb-3">For admin only!</a>
+  <h1 class="text-primary text-center">{{title}}</h1>
+<p class="lead text-dark">Welcome to {{title}}, what toys do your kids want we have them</p>
+  <div class="col-md-4">
+      </div>
+    <h2 class="text-danger">Robot Products</h2>
+<table class="table table-bordered table-success product-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Brand Toy</th>
+      <th class="text-center">Image</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each robotList}}
+      <tr>
+        <td>{{name}}</td>
+        <td>{{brandName}}</td>
+        <td class="text-center">
+          <a href="/robot/robotDetail/{{_id}}">
+            <img src="{{image}}" width="100" height="100" alt="">
+          </a>
+        </td>
+        <td>{{quantity}}</td>
+        <td>{{price}}</td>
+        
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+ <h2 class="text-success">Animal Products</h2>
+<table class="table table-bordered table-success product-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Brand Toy</th>
+      <th class="text-center">Image</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each animalList}}
+      <tr>
+        <td>{{name}}</td>
+        <td>{{brandName}}</td>
+        <td class="text-center">
+          <a href="/animal/animalDetail/{{_id}}">
+            <img src="{{image}}" width="100" height="100" alt="">
+          </a>
+        </td>
+        <td>{{quantity}}</td>
+        <td>{{price}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+ <h2 class="text-warning">Lego Products</h2>
+<table class="table table-bordered table-success product-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Brand Toy</th>
+      <th class="text-center">Image</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each legoList}}
+      <tr>
+        <td>{{name}}</td>
+        <td>{{brandName}}</td>
+        <td class="text-center">
+          <a href="/lego/legoDetail/{{_id}}">
+            <img src="{{image}}" width="100" height="100" alt="">
+          </a>
+        </td>
+        <td>{{quantity}}</td>
+        <td>{{price}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+  </div>
+</body>
+</html>
